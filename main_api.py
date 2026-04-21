@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from scraping import Instagram, TikTok, Youtube, X
+from scraping import Instagram, Tiktok, Youtube, X
 
 app = FastAPI()
 
@@ -10,5 +10,5 @@ def instagram(username: str, type: str = "clean"):
 
 @app.get("/tiktok/{username}")
 def tiktok(username: str, type: str = "clean"):
-    tt = TikTok()
+    tt = Tiktok()  # <- con minúscula
     return tt.get(f"@{username}", type=type)
