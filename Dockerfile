@@ -6,4 +6,4 @@ RUN pip install -r requirements.txt
 RUN pip install fastapi uvicorn
 RUN playwright install chromium
 
-CMD ["uvicorn", "main_api:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["/bin/sh", "-c", "uvicorn main_api:app --host 0.0.0.0 --port $PORT"]
